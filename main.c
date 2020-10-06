@@ -5,19 +5,32 @@
 
 int main(int argc, char *argv[]) {
 	
-	int input;
-	int sum = 0;
+	int x, y;	//입력값
+	char cal;	//산술 연산자
 
-	printf("input a number : ");
-	scanf("%d", &input);
+	printf("enter the calculation : ");
+	scanf("%d%c%d", &x, &cal, &y);
 
-	for(int i = 1; i<=input ; i++)
-	{
-		sum  = sum + i;
+	switch(cal){
+		case '+':
+			printf("= %d\n", x+y);
+			break;
+		
+		case '-':
+			printf("= %d\n", x-y);
+			break;
+		
+		case '*':
+			printf("= %d\n", x*y);
+			break;
+		
+		case '/':
+			printf("= %d\n", x/y);
+			break;
+		default:
+			printf("error\n");
+			break;
 	}
-
-	printf("The result is %d\n", sum);
-	
 	
 	return 0;
 }
