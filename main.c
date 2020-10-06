@@ -5,32 +5,30 @@
 
 int main(int argc, char *argv[]) {
 	
-	int x, y;	//입력값
-	char cal;	//산술 연산자
-
-	printf("enter the calculation : ");
-	scanf("%d%c%d", &x, &cal, &y);
-
-	switch(cal){
-		case '+':
-			printf("= %d\n", x+y);
-			break;
-		
-		case '-':
-			printf("= %d\n", x-y);
-			break;
-		
-		case '*':
-			printf("= %d\n", x*y);
-			break;
-		
-		case '/':
-			printf("= %d\n", x/y);
-			break;
-		default:
-			printf("error\n");
-			break;
-	}
+	int answer = 59;
+	int number; //추측 숫자
+	int count = 0;
 	
+
+	do
+	{
+		printf("Guess a number : ");
+		scanf("%d", &number);	
+		
+		if(number > answer)
+		{
+			printf("high!\n");
+		}
+		else if(number < answer)
+		{
+			printf("low!\n");
+		}
+		
+		count ++;	
+	}
+	while (number != answer);
+
+	printf("Congratulation! trials : %d\n", count);	
+
 	return 0;
 }
